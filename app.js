@@ -3,6 +3,11 @@ const app = express()
 
 require('dotenv').config()
 
+app.use(express.json())
+
+const doctorRoutes = require('./routes/doctor')
+app.use('/doctor', doctorRoutes)
+
 const PORT = process.env.DEV_PORT
 
 app.listen(PORT, () => {
