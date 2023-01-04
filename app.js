@@ -8,6 +8,9 @@ app.use(express.json())
 const doctorRoutes = require('./routes/doctor')
 app.use('/doctor', doctorRoutes)
 
+const patientRoutes = require('./routes/patient')
+app.use('/patient', patientRoutes)
+
 const PORT = process.env.DEV_PORT
 
 app.listen(PORT, () => {
