@@ -1,4 +1,4 @@
-const pool = require('../db.config')
+const pool = require('../../db.config')
 
 const updatePassword = async (req, res) => {
     const doctor_id = 1

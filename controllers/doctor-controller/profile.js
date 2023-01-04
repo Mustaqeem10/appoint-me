@@ -1,4 +1,17 @@
-const pool = require('../db.config')
+const pool = require('../../db.config')
+
+const getProfile = async (req, res) => {
+    const doctor_id = 1
+    const getProfileQuery = `SELECT first_name, last_name, phone_number, gender, date_of_birth
+    FROM doctor WHERE doctor_id = $1`
+    try {
+        const result = await pool.query(getProfileQuery, [doctor_id])
+        res.status(200).json(result.rows)
+    }
+    catch(error) {
+        console.error(error)
+    }
+}
 
 const setProfile = async (req, res) => {
     const doctor_id = 1
@@ -15,4 +28,4 @@ const setProfile = async (req, res) => {
     }
 }
 
-module.exports = setProfile
+module.exports = {getProfile, setProfile}

@@ -1,24 +1,25 @@
 const express = require('express')
 const router = express.Router()
 
-const getStats = require('../controllers/d-dashboard')
+const getStats = require('../controllers/doctor-controller/dashboard')
 router.get('/dashboard', getStats)
 
-const getAppointments = require('../controllers/d-appointment')
+const getAppointments = require('../controllers/doctor-controller/appointment')
 router.get('/appointments', getAppointments)
 
-const {getTimings, setTimings} = require('../controllers/d-timings')
+const {getTimings, setTimings} = require('../controllers/doctor-controller/timings')
 
 router.get('/schedule-timings', getTimings)
 router.post('/schedule-timings', setTimings)
 
-const getReviews = require('../controllers/d-reviews')
+const getReviews = require('../controllers/doctor-controller/reviews')
 router.get('/reviews', getReviews)
 
-const setProfile = require('../controllers/d-profile')
+const {getProfile, setProfile} = require('../controllers/doctor-controller/profile')
+router.get('/profile-setings', getProfile)
 router.post('/profile-settings', setProfile)
 
-const updatePassword = require('../controllers/d-password')
+const updatePassword = require('../controllers/doctor-controller/password')
 router.post('/change-password', updatePassword)
 
 

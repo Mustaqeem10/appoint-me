@@ -1,8 +1,8 @@
-const pool = require('../db.config')
+const pool = require('../../db.config')
 
 const getAppointments = async (req, res) => {
     const doctor_id = 1
-    const getAppointmentsQuery = `SELECT first_name, last_name, booking_time, city, email_address, phone_number FROM 
+    const getAppointmentsQuery = `SELECT first_name, last_name, booking_time, booking_date, city, email_address, phone_number FROM 
     patient INNER JOIN booking on patient.patient_id = booking.patient_id
     INNER JOIN register ON patient.register_id = register.register_id
     INNER JOIN appointment ON booking.appointment_id = appointment.appointment_id
