@@ -1,10 +1,14 @@
-const express = require('express')
-const app = express()
+const express = require("express");
+const app = express();
+const pool = require("./db.config");
+const router = require("./routes/user-router");
+require("dotenv").config();
+app.use(express.json());
 
-require('dotenv').config()
 
-const PORT = process.env.DEV_PORT
+app.use("/", router);
 
+const PORT = process.env.DEV_PORT;
 app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}...`)
-})
+  console.log(`listening on port ${PORT}`);
+});
