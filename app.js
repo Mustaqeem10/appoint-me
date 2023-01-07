@@ -6,10 +6,10 @@ require('dotenv').config()
 app.use(express.json())
 
 const doctorRoutes = require('./routes/doctor')
-app.use('/doctor', doctorRoutes)
+app.use('/api/doctor', doctorRoutes)
 
 const patientRoutes = require('./routes/patient')
-app.use('/patient', patientRoutes)
+app.use('/api/patient', patientRoutes)
 
 const PORT = process.env.DEV_PORT
 
