@@ -4,7 +4,7 @@ const router = express.Router()
 
 
 
-router.get("/search",getDoctorData )
+router.get("/api/search",getDoctorData )
 
 
 module.exports = router;
