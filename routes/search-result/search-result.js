@@ -1,5 +1,5 @@
 const express = require('express')
-const { getDoctorData } = require('../controllers/search-result-controller')
+const { getDoctorData } = require('../../controllers/search-result-controller')
 const router = express.Router()
 
 
